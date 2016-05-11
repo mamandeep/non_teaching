@@ -65,7 +65,7 @@
 </tr>-->
 <tr>
     <td></td>
-    <td><label>I have read the <a href="<?php echo $this->webroot . '/files/General Instructions for Non Teaching.docx'; ?>" target="_blank">General Conditions to Apply</a> and <a href="<?php echo $this->webroot . '/files/Payment and Refund Policy.docx'; ?>">Payment & Refund Policy</a>: (Tick the box to continue)</label>
+    <td><label>I have read the <a href="<?php echo $this->webroot . '/files/General Instructions for Non Teaching.docx'; ?>" target="_blank">General Conditions to Apply</a> and <a href="<?php echo $this->webroot . '/files/Refund Policy.pdf'; ?>">Payment & Refund Policy</a>: (Tick the box to continue)</label>
     </td>
     <td><input type="checkbox" id="declaration" name="declaration"></input></td>
 </tr>
