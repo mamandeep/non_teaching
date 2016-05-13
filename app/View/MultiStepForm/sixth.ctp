@@ -26,6 +26,12 @@ echo $this->Form->create('Image', array('id' => 'Image_Details', 'url' => Router
             <td class="table_headertxt misc_col1" style="padding-top: 17px;">Signature of the candidate (.jpg format, min size 10 kb, max size 200 kb)</td>
             <td><?php echo $this->Form->input('filename4', array('label' => false, 'type' => 'file')); ?></td>
         </tr>
+        <?php if(!empty($applicant['Applicant']['post_applied_for']) && ($applicant['Applicant']['post_applied_for'] == "Librarian" || $applicant['Applicant']['post_applied_for'] == "Deputy Librarian")) { ?>
+        <tr>
+            <td class="table_headertxt misc_col1" style="padding-top: 17px;">API Proforma (MS Word format - <a href="<?php echo $this->webroot . '/files/API Form.doc'; ?>">Download</a>, Fill and Upload here, min size 10 kb, max size 500 kb)</td>
+            <td><?php echo $this->Form->input('filename5', array('label' => false, 'type' => 'file')); ?></td>
+        </tr>
+        <?php } ?>
         <tr>
             <td class="table_headertxt misc_col1" style="padding-top: 17px;">Note: Images can be uploaded using the mobile phone also.</td>
             <td></td>

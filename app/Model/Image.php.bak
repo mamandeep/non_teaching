@@ -338,9 +338,9 @@ class Image extends AppModel {
         if (!empty($this->data[$this->alias]['filename4']['error']) && $this->data[$this->alias]['filename4']['error']==4 && $this->data[$this->alias]['filename4']['size']==0) {
                 unset($this->data[$this->alias]['filename4']);
 	}
-        if (!empty($this->data[$this->alias]['filename5']['error']) && $this->data[$this->alias]['filename5']['error']==4 && $this->data[$this->alias]['filename5']['size']==0) {
+        /*if (!empty($this->data[$this->alias]['filename5']['error']) && $this->data[$this->alias]['filename5']['error']==4 && $this->data[$this->alias]['filename5']['size']==0) {
                 unset($this->data[$this->alias]['filename5']);
-	}
+	}*/
 
 	parent::beforeValidate($options);
     }

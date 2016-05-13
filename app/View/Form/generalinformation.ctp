@@ -76,17 +76,25 @@
     <td>
         <select id="post_applied_for" name="post_applied_for" style="width: auto;">
             <option value="none" selected="selected">None</option>
+            <option value="internalauditofficer">Librarian</option>
+            <option value="internalauditofficer">Deputy Librarian</option>
             <option value="internalauditofficer">Internal Audit Officer</option>
             <option value="assistantregistrar">Assistant Registrar</option>
             <option value="assistantregistrar">Medical Officer</option>
             <option value="privatesecretary">Private Secretary</option>
+            <option value="privatesecretary">Assistant</option>
             <option value="personalassistant">Personal Assistant</option>
             <option value="juniorengineer_civ">Junior Engineer (Civil)</option>
             <option value="estateofficer">Estate Officer</option>
             <option value="pharmacist">Pharmacist</option>
             <option value="securityinspector">Security Inspector</option>
+            <option value="securityinspector">Upper Division Clerk</option>
+            <option value="securityinspector">Lower Division Clerk</option>
+            <option value="securityinspector">Driver</option>
             <option value="cook">Cook</option>
             <option value="libraryattendant">Library Attendant</option>
+            <option value="libraryattendant">Laboratory Attendant</option>
+            <option value="libraryattendant">Kitchen Attendant</option>
         </select>
     </td>
     <td></td>

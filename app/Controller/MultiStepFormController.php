@@ -314,10 +314,16 @@ class MultiStepFormController extends AppController {
         function _prepareSixth() {
             $images = $this->Image->find('all', array(
                     'conditions' => array('Image.user_id' => $this->Session->read('applicant_id'))));
+            $applicant = $this->Applicant->find('all', array(
+                    'conditions' => array('Applicant.id' => $this->Session->read('applicant_id'))));
+            
+            if(count($applicant) == 1) {
+                $this->set('applicant', $applicant['0']);
+            }
             
             if(count($images) == 1) {
                 $this->request->data = $images['0'];
-                $this->Session->write('MultiStepForm.imageId', $images['0']['Image']['id']);
+                //$this->Session->write('MultiStepForm.imageId', $images['0']['Image']['id']);
             }
             else if(count($images) > 1) {
                 $this->Session->setFlash('An error has occured. Please contact Support.');
@@ -328,6 +334,8 @@ class MultiStepFormController extends AppController {
             if(!empty($this->data['Image']['filename']['error']) && $this->data['Image']['filename']['error'] == 4
                 && !empty($this->data['Image']['filename2']['error']) && $this->data['Image']['filename2']['error'] == 4
                 && !empty($this->data['Image']['filename3']['error']) && $this->data['Image']['filename3']['error'] == 4
+				&& !empty($this->data['Image']['filename4']['error']) && $this->data['Image']['filename4']['error'] == 4
+                && !empty($this->data['Image']['filename5']['error']) && $this->data['Image']['filename5']['error'] == 4
                )
             return true;
             
