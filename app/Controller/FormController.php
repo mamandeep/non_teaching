@@ -343,7 +343,7 @@ class FormController extends AppController {
                 return false;
             }		
             if(count($applicants) == 1 && count($misc) == 1) {
-                $this->set('postAppliedFor', $this->getPostAppliedFor());
+                //$this->set('postAppliedFor', $this->getPostAppliedFor());
                 $this->set('applicant', $applicants['0']);
                 $this->set('education_arr', $education_arr);
                 $this->set('exp_arr', $exp_arr);
