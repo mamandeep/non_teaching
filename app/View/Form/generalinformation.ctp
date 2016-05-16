@@ -4,7 +4,7 @@
     <td width="20%"></td>
     <td width="50%"><span class="generalinfoheader">Advertisement</span>
     <br/>For Advertisement: <a href="<?php echo $this->webroot . '/files/CUP Recruietment TNT-01(2016 Notice.jpg'; ?>" target="_blank">click here</a>
-    <br/></td>
+    <br/>For Corrigendum: <a href="<?php echo $this->webroot . '/files/CGDM.jpg'; ?>" target="_blank">click here</a></td>
 	<td></td>
     
 </tr>
@@ -12,7 +12,7 @@
     <td></td>
     <td><span class="generalinfoheader">Educational Qualifications</span>
     <br/>Essential Qualifications   for Non Teaching positions: 
-		<a href="<?php echo $this->webroot . '/files/Final Details TNT-01(2016).doc'; ?>" target="_blank">click here</a><br/>
+		<a href="<?php echo $this->webroot . '/files/Non_Teaching_Advt.pdf'; ?>" target="_blank">click here</a><br/>
     <br/></td>
     <td></td>
 </tr>
@@ -20,9 +20,9 @@
     <td></td>
     <td>There is no fee for SC/ST/PWD applicants and for others the fee is Rs. 600. 
         <br/>
-        The last date of online application form is 30<sup>th</sup> May, 2016 1700 hrs
+        The last date of online application form is 06<sup>th</sup> June, 2016 1700 hrs
         <br/>
-        The last date for signed copy submission is 06<sup>th</sup> June, 2016 1700 hrs
+        The last date for signed copy submission is 12<sup>th</sup> June, 2016 1700 hrs
     </td>
     <td>
     </td>

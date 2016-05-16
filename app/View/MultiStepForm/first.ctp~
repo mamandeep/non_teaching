@@ -7,14 +7,14 @@
                     echo $this->Form->input('Applicant.id', array('type' => 'hidden'));
                     echo $this->Form->input('Applicant.advertisement_no', array(
                         'type' => 'text',
-                        'disabled' => 'disabled',
-                        'value' => 'NT-01 (2015)'
+                        'readonly' => 'readonly',
+                        'value' => 'T/NT-01 (2016)'
                     )); ?></td>
                 <td><?php $post = !empty($postAppliedFor) ? $postAppliedFor : '';
                 $options = array( $post => $post );
                 echo $this->Form->input('Applicant.post_applied_for', array(
                     'type' => 'text',
-                     'disabled' => 'disabled',
+                     'readonly' => 'readonly',
                     'value' => $post
                 )); ?></td>
             </tr>
@@ -166,6 +166,16 @@
                         'id' => 'departmental_cand'
                     ));  ?>
         <br/>
+	<br/>
+        <?php
+        echo $this->Form->input('Applicant.internal_cand', array(
+                        'options' => array('yes' => 'Yes',
+                                           'no' => 'No'),
+                        'selected' => (!empty($internal_cand) ? $internal_cand : 'no'),
+                        'label' => 'Are you an Internal Candidate ? (Contractual Employee)',
+                        'id' => 'internal_cand'
+                    ));  ?>
+        <br/>
         <div class="table_headertxt">Name & Complete Address with Pincode *</div>
         <table id="address_table" border="2px solid black" style="border-right: 2px solid black !important;">
             <tr>
@@ -237,7 +247,7 @@
     }
     
     function calage() {
-        var dat = new Date("12/06/2015");
+        var dat = new Date("05/30/2016");
         var curday = dat.getDate();
         var curmon = dat.getMonth()+1;
         var curyear = dat.getFullYear();
