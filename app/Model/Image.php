@@ -42,8 +42,8 @@ class Image extends AppModel {
             ),
             // http://book.cakephp.org/2.0/en/models/data-validation.html#Validation::mimeType
             'mimeType' => array(
-                'rule' => array('mimeType', array('image/gif','image/png', 'image/jpeg', 'image/jpg')),
-                'message' => 'Invalid file, only Jpg/Jpeg Images are to be uploaded',
+                'rule' => array('mimeType', array('image/gif','image/png', 'image/jpeg', 'image/jpg', 'application/pdf')),
+                'message' => 'Invalid file, only Jpg/Jpeg/gif/png/pdf files are to be uploaded',
                 'required' => FALSE,
                 'allowEmpty' => TRUE,
             ),
@@ -71,8 +71,8 @@ class Image extends AppModel {
             ),
             // http://book.cakephp.org/2.0/en/models/data-validation.html#Validation::mimeType
             'mimeType' => array(
-                'rule' => array('mimeType', array('image/gif','image/png', 'image/jpeg', 'image/jpg')),
-                'message' => 'Invalid file, only Jpg/Jpeg Images allowed',
+                'rule' => array('mimeType', array('image/gif','image/png', 'image/jpeg', 'image/jpg', 'application/pdf')),
+                'message' => 'Invalid file, only Jpg/Jpeg/gif/png/pdf files allowed',
                 'required' => FALSE,
                 'allowEmpty' => TRUE,
             ),

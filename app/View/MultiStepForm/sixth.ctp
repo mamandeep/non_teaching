@@ -15,11 +15,11 @@ echo $this->Form->create('Image', array('id' => 'Image_Details', 'url' => Router
             <td><?php echo $this->Form->input('filename2', array('label' => false, 'type' => 'file')); ?></td>
         </tr>-->
         <tr>
-            <td class="table_headertxt misc_col1" style="padding-top: 17px;">Date of Birth Certificate - 10<sup>th</sup> / 11<sup>th</sup> / 10+2 Certificate - where DOB is mentioned (.jpg format, min size 10 kb, max size 200 kb)</td>
+            <td class="table_headertxt misc_col1" style="padding-top: 17px;">Date of Birth Certificate - 10<sup>th</sup> / 11<sup>th</sup> / 10+2 Certificate - where DOB is mentioned (.jpg/.png/.gif/.pdf format, min size 10 kb, max size 200 kb)</td>
             <td><?php echo $this->Form->input('filename2', array('label' => false, 'type' => 'file')); ?></td>
         </tr>
         <tr>
-            <td class="table_headertxt misc_col1" style="padding-top: 17px;">Caste Certificate, as per Central Govt. List (.jpg format, min size 10 kb, max size 200 kb)</td>
+            <td class="table_headertxt misc_col1" style="padding-top: 17px;">Caste Certificate, as per Central Govt. List (.jpg/.png/.gif/.pdf format, min size 10 kb, max size 200 kb)</td>
             <td><?php echo $this->Form->input('filename3', array('label' => false, 'type' => 'file')); ?></td>
         </tr>
         <tr>
