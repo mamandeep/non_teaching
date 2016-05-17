@@ -2,7 +2,7 @@
 	<tr>
 		<td>
 			
-			<?php if($paymentStatus == "0") {
+			<?php if(isset($paymentStatus) && $paymentStatus == "0") {
 				echo "Your payment has been successful.";
 			      }
 			      else {
@@ -12,7 +12,7 @@
 			
 		</td>
 	</tr>
-	<?php if($paymentStatus == "0") { ?>
+	<?php if(isset($paymentStatus) && $paymentStatus == "0") { ?>
 	<tr>
 		<td>
 			Status: <?php echo $paymentStatusStr ?>
@@ -20,7 +20,7 @@
 		
 	</tr>
 	<?php } 
-	 if($paymentStatus == "0") { ?>
+	 if(isset($paymentStatus) && $paymentStatus == "0") { ?>
 	<tr>
 		<td>
 			Transaction ID: <?php echo $transID ?>
@@ -28,7 +28,7 @@
 		
 	</tr>
 	<?php } 
-	if($paymentStatus == "0") { ?>
+	if(isset($paymentStatus) && $paymentStatus == "0") { ?>
 	<tr>
 		<td>
 			Transaction Amount: Rs. <?php echo $tras_amount ?>
@@ -37,7 +37,7 @@
 	</tr>
 	<?php } ?>
 	<tr>
-			<?php if($paymentStatus == "0") { ?>
+			<?php if(isset($paymentStatus) && $paymentStatus == "0") { ?>
 			<td>
 				<div style="text-align: center; font-size: 30px;">
         			<?php echo $this->Form->create('Temp', array('id' => 'Continue_Form', 'url' => Router::url( '/users/dashboard', true ))); ?>
@@ -48,7 +48,7 @@
 			</td>
 			      <?php }
 			      else { 
-				echo "<td>" . $error_mesg . "</td>";
+				echo "<td>" . isset($error_mesg) ? $error_mesg : "An error has occured during the payment." . "</td>";
 			      }
 			?>
 	</tr>
