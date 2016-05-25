@@ -31,7 +31,7 @@ class FormController extends AppController {
     }
 	
 	public function generalinformation() {
-		$applicants = $this->Applicant->find('all', array(
+            $applicants = $this->Applicant->find('all', array(
                 'conditions' => array('Applicant.id' => $this->Session->read('applicant_id'))));
             if (count($applicants) == 1 ) {
                 $this->set('applicant', $applicants['0']);
@@ -58,7 +58,7 @@ class FormController extends AppController {
                         return false;
                     }
                     if (!preg_match("/^[789]\d{9}$/",$this->data['Registereduser']['mobile_no'])) {
-                        $this->Session->setFlash('Mobile number is not correct. Please enter 10 digit mobile number.');
+                        $this->Session->setFlash('Mobile number is not correct. Please enter a valid 10 digit mobile number.');
                         return false; 
                     }
                     $registered_user = $this->Registereduser->find('all', array(
@@ -81,7 +81,8 @@ class FormController extends AppController {
                         $this->Registereduser->id = $this->Session->read('registration_id');
                         $this->Registereduser->saveField('applicant_id', $this->Session->read('applicant_id'));
                         $this->Session->setFlash('You have successfully registered.');
-                        $this->redirect(array('controller' => 'form', 'action' => 'pay'));
+                        //$this->redirect(array('controller' => 'form', 'action' => 'pay'));
+                        $this->redirect(array('controller' => 'users', 'action' => 'dashboard'));
                     }
                     else {
                         $this->Session->setFlash('There was an error in Registration.');
@@ -191,12 +192,12 @@ class FormController extends AppController {
                             'conditions' => array('Applicant.id' => $this->Session->read('applicant_id'))));
                 if($registered_user['0']['Registereduser']['category'] == "SC" || $registered_user['0']['Registereduser']['category'] == "ST" 
                         || $registered_user['0']['Registereduser']['physically_disabled'] == "yes") {
-                        $this->set('app_fee', '250');
-                        $this->Session->write('payment_amount','250');
+                        $this->set('app_fee', '150');
+                        $this->Session->write('payment_amount','150');
                 }
                 else {
-                        $this->set('app_fee', '750');
-                        $this->Session->write('payment_amount','750');
+                        $this->set('app_fee', '600');
+                        $this->Session->write('payment_amount','600');
                 }
                 $this->set('Applicant', $applicants['0']['Applicant']);
                 //}
@@ -342,7 +343,7 @@ class FormController extends AppController {
                 return false;
             }		
             if(count($applicants) == 1 && count($misc) == 1) {
-                $this->set('postAppliedFor', $this->getPostAppliedFor());
+                //$this->set('postAppliedFor', $this->getPostAppliedFor());
                 $this->set('applicant', $applicants['0']);
                 $this->set('education_arr', $education_arr);
                 $this->set('exp_arr', $exp_arr);
@@ -362,13 +363,12 @@ class FormController extends AppController {
 	}
 
 	public function final_submit() {
-		$this->Post->create();
-            	$this->Post->id = $this->Post->field('id', array('user_id' => $this->Session->read('applicant_id')));
-            	if ($this->Post->id) {
-                	$this->Post->saveField('final_submit', "1");
+		$this->Applicant->id = $this->Session->read('applicant_id');
+                if (!empty($this->Applicant->id)) {
+                	$this->Applicant->saveField('final_submit', "1");
             	}
 		//$this->Session->delete('applicant_id');
-            	$this->redirect(array('controller' => 'form', 'action' => 'appliedposts'));
+            	$this->redirect(array('controller' => 'form', 'action' => 'generalinformation'));
 		//$this->redirect(array('controller' => 'users', 'action' => 'logout'));
 	}
 

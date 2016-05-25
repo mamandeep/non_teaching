@@ -4,7 +4,12 @@
     <td width="20%"></td>
     <td width="50%"><span class="generalinfoheader">Advertisement</span>
     <br/>For Advertisement: <a href="<?php echo $this->webroot . '/files/CUP Recruietment TNT-01(2016 Notice.jpg'; ?>" target="_blank">click here</a>
-    <br/>For Corrigendum: <a href="<?php echo $this->webroot . '/files/CGDM.jpg'; ?>" target="_blank">click here</a></td>
+    <br/>For Corrigendum: <a href="<?php echo $this->webroot . '/files/CGDM.jpg'; ?>" target="_blank">click here</a>
+	<br/>For Corrigendum II: <a href="<?php echo $this->webroot . '/files/CGDM 2.jpg'; ?>" target="_blank">click here</a>
+	<?php if(isset($final_subimt) && $final_subimt == "1") { ?>
+    <br/>For Uploading new API Proforma: <a href="<?php echo $this->webroot . 'uploadproforma/upload'; ?>">click here</a>
+    <?php } ?>
+	</td>
 	<td></td>
     
 </tr>
