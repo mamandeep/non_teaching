@@ -95,6 +95,12 @@ table {
             <td class="print_headers">Category</td>
             <td class="print_value"><?php echo $applicant['Applicant']['category']?></td>
         </tr>
+        <?php if(!empty($applicant['Applicant']['internal_regular']) && $applicant['Applicant']['internal_regular'] == "yes") { ?>
+        <tr>
+            <td class="print_headers">Internal Applicant (Regular)</td>
+            <td class="print_value"><?php echo $applicant['Applicant']['internal_regular'] ?></td>
+        </tr>
+        <?php } ?>
         <tr>
             <td class="print_headers">Email: </td>
             <td class="print_value"><?php echo $applicant['Applicant']['email']?>
