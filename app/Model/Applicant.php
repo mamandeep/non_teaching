@@ -98,6 +98,10 @@ class Applicant extends AppModel {
             'rule' => 'notEmpty',
             'message' => 'required field'
         ),
+        'internal_regular' => array(
+            'rule' => 'notEmpty',
+            'message' => 'required field'
+        ),
         'blindness_applicable',
         'blindness_percentage',
         'hearing_applicable',

@@ -102,6 +102,7 @@ class MultiStepFormController extends AppController {
                 $physically_disabled = $applicants['0']['Applicant']['physical_disable'];
                 $departmental_cand = $applicants['0']['Applicant']['departmental_cand'];
 		$internal_cand = $applicants['0']['Applicant']['internal_cand'];
+                $internal_reg = $applicants['0']['Applicant']['internal_regular'];
                 $this->set('maritalStatusSelected', $maritalStatusSelected);
                 $this->set('category', $category);
                 $this->set('gender', $gender);
@@ -109,6 +110,7 @@ class MultiStepFormController extends AppController {
                 $this->set('postAppliedFor', $postAppliedFor);
                 $this->set('departmental_cand', $departmental_cand);
 		$this->set('internal_cand', $internal_cand);
+                $this->set('internal_reg', $internal_reg);
             } else {
                 $this->Session->setFlash('An error has occured. Please contact support.');
                 $this->redirect(array('controller' => 'form', 'action' => 'generalinformation'));
@@ -349,9 +351,12 @@ class MultiStepFormController extends AppController {
 	function _prepareSeventh($count = 1) {
 		$registered_user = $this->Registereduser->find('all', array(
                     'conditions' => array('Registereduser.applicant_id' => $this->Session->read('applicant_id'))));
+                $applicant = $this->Applicant->find('all', array(
+                    'conditions' => array('Applicant.id' => $this->Session->read('applicant_id'))));
 
                 if($registered_user['0']['Registereduser']['category'] == "SC" || $registered_user['0']['Registereduser']['category'] == "ST" 
-                        || $registered_user['0']['Registereduser']['physically_disabled'] == "yes") {
+                        || $registered_user['0']['Registereduser']['physically_disabled'] == "yes"
+                        || $applicant['0']['Applicant']['internal_regular'] == "yes") {
                     //$this->set('payment_status', "0");
                     $this->set('exempted', '0');
                 }

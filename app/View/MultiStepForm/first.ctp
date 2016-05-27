@@ -176,6 +176,14 @@
                         'id' => 'internal_cand'
                     ));  ?>
         <br/>
+        <?php
+        echo $this->Form->input('Applicant.internal_regular', array(
+                        'options' => array('yes' => 'Yes',
+                                           'no' => 'No'),
+                        'selected' => (!empty($internal_reg) ? $internal_reg : 'no'),
+                        'label' => 'Are you an Internal Candidate ? (Regular)',
+                        'id' => 'internal_reg'
+                    ));  ?>
         <div class="table_headertxt">Name & Complete Address with Pincode *</div>
         <table id="address_table" border="2px solid black" style="border-right: 2px solid black !important;">
             <tr>
