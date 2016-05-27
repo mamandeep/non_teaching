@@ -193,6 +193,7 @@ class FormController extends AppController {
                             'conditions' => array('Applicant.id' => $this->Session->read('applicant_id'))));
                 if($registered_user['0']['Registereduser']['category'] == "SC" || $registered_user['0']['Registereduser']['category'] == "ST" 
                         || $registered_user['0']['Registereduser']['physically_disabled'] == "yes"
+                        || $applicants['0']['Applicant']['internal_regular'] == "yes") {
                         //$this->set('app_fee', '150');
                         //$this->Session->write('payment_amount','150');
                 }
