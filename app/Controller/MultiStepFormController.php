@@ -123,7 +123,8 @@ class MultiStepFormController extends AppController {
         }
         
         function _processFirst() {
-            $age_limit = $this->checkAgeAsPerPost($this->data['Applicant']['age_on_adv_yrs'], $this->getPostAppliedFor() ,$this->data['Applicant']['category'], $this->data['Applicant']['physical_disable'], $this->data['Applicant']['departmental_cand'], $this->data['Applicant']['internal_cand']);
+            $age_limit = 0;
+            //$age_limit = $this->checkAgeAsPerPost($this->data['Applicant']['age_on_adv_yrs'], $this->getPostAppliedFor() ,$this->data['Applicant']['category'], $this->data['Applicant']['physical_disable'], $this->data['Applicant']['departmental_cand'], $this->data['Applicant']['internal_cand']);
             if($age_limit != 0 && $this->data['Applicant']['age_on_adv_yrs'] >= $age_limit ) {
                 $this->Session->setFlash('The general conditions for selected post are not met.');
                 $this->Session->delete('applicant_id');
